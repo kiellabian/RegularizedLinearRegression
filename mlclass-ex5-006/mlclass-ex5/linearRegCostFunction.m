@@ -28,7 +28,7 @@ J = diff_squared / (2 * m);
 theta = [0; theta(2:end, :);];
 sumOfThetas = sum(theta .^ 2);
 sumOfThetas = sumOfThetas * lambda / (2 * m);
-J = J + sumOfThetas
+J = J + sumOfThetas;
 
 
 %grad2 = (1/m)*(X'*difference + lambda*theta(2))
@@ -48,7 +48,5 @@ J = J + sumOfThetas
 for j=1:size(theta)
   grad(j) = (1/m)*((Hypothesis .- y)'*X(:,j)) + (lambda/m)*theta(j);
 end
-
-grad
 
 end
